@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Kayd Withers — Front End Developer</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+  <script>
+    var tag = document.createElement('script');
+    tag.id = 'iframe';
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytplayer', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      document.getElementById('ytplayer');
+      event.target.playVideo();
+      player.mute();
+    }
+
+    // Hide YouTube loading animation
+    function onPlayerActive(playerStatus) {
+      if (playerStatus === 1) {
+        document.getElementById('ytplayer').classList.add('is-active');
+      } else {
+        document.getElementById('ytplayer').classList.remove('is-active');
+      }
+    }
+    function onPlayerStateChange(event) {
+      onPlayerActive(event.data);
+    }
+  </script>
+
+</html>
