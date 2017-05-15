@@ -33,7 +33,7 @@
 
 <script>
 
-  import Hamburger from '@/molecules/Hamburger'
+  import Hamburger from '@/components/molecules/Hamburger'
 
   export default {
     name: 'navigation',

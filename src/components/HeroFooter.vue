@@ -4,7 +4,7 @@
 
     <p class="h6">
       <a 
-        class="pt-3  pl-3 "
+        class="pt-3  pl-3"
         href="#" 
         v-scroll-to="{
           el: '#portfolio',

@@ -56,8 +56,8 @@
 
 <script>
 
-  import Pikachu from '@/atoms/Pikachu'
-  import Secret from './Secret'
+  import Pikachu from '@/components/atoms/Pikachu'
+  import Secret from '@/components/Secret'
 
   export default {
     name: 'hero',

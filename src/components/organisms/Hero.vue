@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="hero__content  p-r  z-3  tt-u  ls-8">
+    <div class="hero__content  p-r  z-3  tt-u  ls-8  pv-5">
       <h1 class="fw-6">
         {{heading}}
       </h1>
@@ -39,7 +39,7 @@
       </h2>
     </div>
 
-    <div class="hero__footer  p-r  z-3  mv-2">
+    <div class="hero__footer  p-r  z-3  pv-2">
       <div class="page">
         <div class="layout">
           <div class="layout__item">
@@ -62,9 +62,9 @@
 
 <script>
 
-  import HeroHeader from './HeroHeader'
-  import HeroFooter from './HeroFooter'
-  import Particles from '@/molecules/Particles'
+  import HeroHeader from '@/components/HeroHeader'
+  import HeroFooter from '@/components/HeroFooter'
+  import Particles from '@/components/molecules/Particles'
 
   export default {
     name: 'hero',
@@ -167,39 +167,38 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 30vh;
     transform: translate(-50%, -50%);
-    font-size: 1rem;
     color: #fff;
     width: 100%;
     text-align: center;
   }
 
   .hero__content h1 {
-    left: 50%;
+    display: block;
     opacity: 1;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.98, 0.98);
     transition: all var(--transition);
     user-select: none;
   }
 
     .hero__content:hover h1 {
       opacity: 0;
+      transform: scale(0.9, 0.9);
     }
 
   .hero__content h2 {
     left: 50%;
-    position: absolute;
-    top: 50%;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.98, 0.98);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
     transition: all var(--transition);
+    width: 100%;
   }
 
     .hero__content:hover h2 {
       opacity: 1;
+      transform: translate(-50%, -50%) scale(1, 1);
     }
 
 </style>
